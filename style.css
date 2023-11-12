@@ -110,15 +110,22 @@ main {
     margin-left: 8px;
 }
 
-.menu {
-    margin-top: 16px;
-}
-
 .menu__container {
     display: flex;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow: scroll;
     align-content: center;
+    /* Добавим дополнительный нижнее поле элементу, в котором прокручивается меню */
+    padding-bottom: 20px;
+    /* С помощью отрицательного отступа компенсируем «нарощенное» поле  */
+    margin-bottom: -20px;
+    padding-right: 15px;
+    margin-right: -15px;
+}
+
+.menu {
+    margin-top: 16px;
+    overflow: hidden;
 }
 
 .menu__item {
