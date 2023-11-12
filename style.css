@@ -157,7 +157,7 @@ main {
     width: 40%;
 }
 
-.firstBlock__about_hidden {
+.firstBlock__text :nth-child(2) {
     display: none;
 }
 
@@ -217,6 +217,9 @@ main {
     .firstBlock__about :nth-child(2) {
         display: inline-block;
     }
+    .firstBlock__about_hidden {
+        display: none;
+    }
     .firstBlock__image {
         width: 45%;
     }
@@ -239,7 +242,7 @@ main {
     .firstBlock__text {
         width: 45%;
     }
-    .firstBlock__about_hidden {
+    .firstBlock__about :nth-child(2) {
         display: inline;
     }
     .firstBlock__image {
