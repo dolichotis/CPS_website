@@ -157,13 +157,14 @@ main {
     width: 40%;
 }
 
-.firstBlock__text :nth-child(2) {
+.firstBlock__about :nth-child(2) {
     display: none;
 }
 
 .firstBlock__readMore {
     margin-left: 16px;
     display: flex;
+    margin-top: 16px;
 }
 
 .firstBlock__readMore_expand {
