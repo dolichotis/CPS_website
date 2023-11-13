@@ -41,7 +41,7 @@ body {
     margin-left: 0;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 320px) {
     .header__navigation_hidden {
         display: none;
     }
@@ -191,7 +191,7 @@ main {
     height: auto;
 }
 
-@media (min-width: 320px) {
+@media (max-width: 767px) {
     .titleGroup__navigation {
         display: none;
     }
