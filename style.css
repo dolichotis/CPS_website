@@ -41,7 +41,7 @@ body {
     margin-left: 0;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 320px) {
     .header__navigation_hidden {
         display: none;
     }
