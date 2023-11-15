@@ -85,39 +85,44 @@ main {
 
 .titleGroup {
     display: flex;
-}
-
-.titleGroup__title {
-    display: flex;
+    padding: 0;
 }
 
 .titleGroup__text {
     align-self: center;
-    margin-left: 12px;
+    margin: 0 0 0 12px;
     font-family: "TT Lakes bold", "Arial", serif;
     font-size: 28px;
+    line-height: 40px;
+    display: inline-block;
 }
 
-.titleGroup__highlight {
+.titleGroup__text::before {
+    content: "";
+    position: absolute;
     width: 4px;
     height: 40px;
     background-color: #41F6D7;
     border-radius: 0 40px 40px 0;
+    left: 0;
 }
 
-.titleGroup__navigation_textStyle {
+.titleGroup__navigation_distance {
+    margin-left: 8px;
     font-size: 16px;
     line-height: 24px;
     font-weight: bold;
 }
 
-.titleGroup__navigation_distance {
-    margin-left: 8px;
+.menu {
+    margin-top: 16px;
+    overflow: hidden;
 }
 
 .menu__container {
     display: flex;
     flex-wrap: nowrap;
+    list-style-type: none;
     overflow: scroll;
     align-content: center;
     /* Добавим дополнительный нижнее поле элементу, в котором прокручивается меню */
@@ -126,11 +131,7 @@ main {
     margin-bottom: -20px;
     padding-right: 15px;
     margin-right: -15px;
-}
-
-.menu {
-    margin-top: 16px;
-    overflow: hidden;
+    padding-left: 24px;
 }
 
 .menu__item {
@@ -142,6 +143,7 @@ main {
     padding: 8px 16px;
     margin-top: 24px;
     margin-left: 16px;
+    display: inline-block;
 }
 
 .menu__item_active{
@@ -162,6 +164,10 @@ main {
     width: 40%;
 }
 
+.firstBlock__about {
+    word-break:break-all;
+}
+
 .firstBlock__about :nth-child(2) {
     display: none;
 }
@@ -172,27 +178,26 @@ main {
     margin-top: 16px;
 }
 
-.firstBlock__readMore_expand {
-    background-image: url("img/expand.svg");
-    width: 24px;
-    height: 24px;
-}
-
 .firstBlock__readMore_text {
-    margin-left: 8px;
     font-size: 16px;
     line-height: 24px;
     font-weight: bold;
+    background:none;
+    border:none;
+}
+.firstBlock__readMore_text::before {
+    content: "";
+    position: absolute;
+    background: url('img/expand.svg') no-repeat;
+    width: 24px;
+    height: 24px;
+    left: 25px;
 }
 
 .firstBlock__image {
     width: 50%;
-    margin-left: 36px;
-}
-
-.firstBlock__image_size {
-    width: 100%;
     min-width: 320px;
+    margin-left: 36px;
     height: auto;
 }
 
