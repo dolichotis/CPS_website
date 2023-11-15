@@ -181,7 +181,6 @@ main {
 }
 
 .firstBlock__about {
-    word-break:break-all;
 }
 
 .firstBlock__about :nth-child(2) {
