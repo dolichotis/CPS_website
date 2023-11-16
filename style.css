@@ -261,7 +261,7 @@ main {
     }
     .firstBlock__image {
         min-width: 360px;
-        width: calc(100% - 10px);
+        width: calc(100% - 11px);
     }
 }
 
