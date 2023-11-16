@@ -280,7 +280,7 @@ main {
         width: 490px;
     }
     .firstBlock__about {
-        height: 130px;
+        height: 120px;
         overflow: hidden;
     }
     .firstBlock__about :nth-child(2) {
