@@ -47,6 +47,10 @@ body {
     margin-right: 0;
 }
 
+.header__burger-menu {
+    display: block;
+}
+
 @media (max-width: 768px) {
     .header__navigation_hidden {
         display: none;
