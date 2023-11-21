@@ -30,30 +30,54 @@ body {
 .header__navigation {
     margin-left: auto;
     display: flex;
+    align-items: center;
 }
 
-.header__item {
+.header__navigation--hidden {
+    display: flex;
+}
+
+.header__button {
+    margin-right: 16px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF3E79;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    background-color: #FF3E79;
-    border-radius: 20px;
     border: 0;
-    margin-right: 16px;
-    margin-left: 0;
     cursor: pointer;
 }
 
-.header__item_last {
+.header > .header__button:first-child,
+.header__navigation .header__button:last-child {
     margin-right: 0;
 }
 
-.header__burger-menu {
-    display: block;
+.header__logo {
+    position: relative;
+}
+
+.header__logo--center {
+    vertical-align: middle;
+}
+
+.shadow {
+    width: 100%;
+    height: 1px;
+    background-color: #D9FFF5;
 }
 
 @media (max-width: 768px) {
-    .header__navigation_hidden {
+    .header__navigation--hidden {
         display: none;
+    }
+    .header__logo {
+        margin-left: 20px;
     }
     .header__logo::after {
         content: "";
@@ -61,14 +85,17 @@ body {
         width: 2px;
         height: 32px;
         background-color: #EAEAEA;
-        margin: 0 16px;
-        vertical-align: baseline;
+        margin-left: 16px;
+        vertical-align: middle;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1228px) {
+    .header {
+        padding: 24px;
+    }
     .header__logo::before,
-    .header__navigation_hidden::after {
+    .header__navigation--hidden::after {
         content: "";
         display: inline-block;
         width: 2px;
@@ -76,20 +103,20 @@ body {
         background-color: #EAEAEA;
         vertical-align: middle;
         margin-right: 20px;
-    }
-    .header__logo::before {
-        vertical-align: baseline;
+        margin-left: 20px;
+        align-self: center;
     }
 }
 
 @media (min-width: 1228px) {
-    .header {
+    .header,
+    .shadow {
         display: none;
     }
 }
 
 main {
-    margin-top: 24px;
+    padding: 24px;
 }
 
 .titleGroup {
@@ -99,7 +126,6 @@ main {
 
 .titleGroup__text {
     align-self: center;
-    margin: 0 0 0 12px;
     font-family: "TT Lakes bold", "Arial", serif;
     font-size: 28px;
     line-height: 40px;
@@ -116,28 +142,24 @@ main {
     left: 0;
 }
 
-.titleGroup__navigation_style {
-    margin-left: 8px;
+.titleGroup__navigation--style {
     font-size: 16px;
     line-height: 24px;
-    font-weight: bold;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    justify-content: center;
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0;
+}
+
+.titleGroup__navigation--style:not(:first-child) {
+    margin-left: 32px;
 }
 
 .titleGroup__item {
-    height: 40px;
-    width: 40px;
     margin-left: 8px;
-    background-color: #FF3E79;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .menu {
@@ -146,34 +168,34 @@ main {
 }
 
 .menu__container {
+    margin: 0 -17px -24px 0;
+    padding: 0 17px 24px 0;
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
     overflow: scroll;
     align-content: center;
     /* Добавим дополнительный нижнее поле элементу, в котором прокручивается меню */
-    padding-bottom: 20px;
     /* С помощью отрицательного отступа компенсируем «нарощенное» поле  */
-    margin-bottom: -20px;
-    padding-right: 15px;
-    margin-right: -15px;
-    padding-left: 24px;
 }
 
-.menu__item {
+.linkItem {
     font-size: 16px;
     line-height: 24px;
     white-space: nowrap;
     text-decoration: none;
     color: #7E7E82;
     padding: 8px 16px;
-    margin-top: 4px;
-    margin-left: 16px;
     display: inline-block;
     cursor: pointer;
 }
 
-.menu__item_active{
+.menu__item:not(:first-child) {
+    margin-left: 16px;
+
+}
+
+.menu__item--active{
     border: 2px solid #B8FFEC;
     background-color: #FFFFFF;
     border-radius: 6px;
@@ -182,22 +204,23 @@ main {
 .firstBlock {
     display: flex;
     flex-wrap: nowrap;
-    margin-top: 16px;
+    margin-top: 24px;
 }
 
 .firstBlock__text {
-    margin-left: 34px;
     align-self: flex-start;
+    flex-grow: 1;
 }
 
-.firstBlock__about_style {
+.firstBlock__text--style {
     white-space: pre-line;
-    margin-top: 16px;
+    margin: 0;
 }
-
 
 .firstBlock__readMore {
-    margin-left: 16px;
+    padding: 0;
+    padding-top: 13px;
+    margin-left: 32px;
     font-size: 16px;
     line-height: 24px;
     font-weight: bold;
@@ -216,22 +239,22 @@ main {
 }
 
 .firstBlock__image {
+    min-width: 320px;
     margin-left: 36px;
     width: calc(100% - 500px);
-}
-
-.firstBlock__image_size {
     max-width: 100%;
     height: auto;
 }
 
 @media (max-width: 768px) {
+    main {
+        padding: 24px 16px;
+    }
     .firstBlock {
         flex-wrap: wrap;
     }
-    .firstBlock__about {
-        padding-right: 30px;
-        height: 160px;
+    .firstBlock__text--style {
+        height: 39px;
         overflow:hidden;
     }
     .titleGroup__navigation {
@@ -239,61 +262,52 @@ main {
     }
     .firstBlock__text {
         margin-bottom: 16px;
-        width: 288px;
+    }
+    .firstBlock__readMore::before {
+        left: 16px;
     }
     .firstBlock__image {
-        min-width: 320px;
         margin: 0;
         width: 100%;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1120px) {
+@media (min-width: 768px) and (max-width: 1228px) {
     .titleGroup__navigation {
         display: none;
     }
-    .firstBlock {
-        margin-right: 34px;
-    }
     .firstBlock__text {
-        width: 350px;
+        width: 80%;
     }
-    .firstBlock__about {
-        width: 312px;
-        height: 140px;
-        overflow:hidden;
+    .firstBlock__text--style {
+        height: 72px;
+        overflow: hidden;
     }
     .firstBlock__about :nth-child(2) {
         display: inline-block;
     }
     .firstBlock__image {
-        min-width: 360px;
-        width: calc(100% - 10px);
+        width: 100%;
     }
 }
 
-@media (min-width: 1120px) {
-    header {
-        display: none;
+@media (min-width: 1228px) {
+    main {
+        padding: 32px;
     }
     .menu__container {
         flex-wrap: wrap;
         align-content: flex-start;
     }
-    .firstBlock {
-        margin-right: 34px;
-    }
     .firstBlock__text {
-        width: 490px;
+        width: 45%;
     }
-    .firstBlock__about {
-        height: 100px;
+    .firstBlock__text--style {
+        height: 74px;
         overflow: hidden;
     }
     .firstBlock__about :nth-child(2) {
         display: inline;
-    }
-    .firstBlock__image {
     }
 }
 
