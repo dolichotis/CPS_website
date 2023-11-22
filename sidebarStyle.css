@@ -32,6 +32,10 @@ body {
     margin: 0;
 }
 
+.list__item {
+    position: relative;
+}
+
 .list__item:not(:first-child) {
     margin-top: 32px;
 }
@@ -41,11 +45,27 @@ body {
     padding: 0;
 }
 
-.list__item--chosen {
+.list__item--colorChosen {
     color: #7E7E82;
 }
 
+.list__item--chosen::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 32px;
+    background-color: #41F6D7;
+    border-radius: 0 40px 40px 0;
+    left: -24px;
+    top: -4px;
+}
+
+.linkItem:hover {
+    color: #41F6D7;
+}
+
 .sidebar__footer {
+    margin-top: 40px;
     padding: 24px;
     align-self: flex-end;
 }
