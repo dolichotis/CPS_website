@@ -1,7 +1,7 @@
 body {
+    margin: 0;
     width: 320px;
     height: 100%;
-    box-shadow: 16px 0 52px #0E185033;
     background-color: white;
     color: #1B1C21;
 }
@@ -9,12 +9,16 @@ body {
 .sidebar {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 24px;
+    box-shadow: 16px 0 52px #0E185033;
 }
 
 .sidebar__header {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .sidebar__logo_position {
@@ -26,10 +30,14 @@ body {
     margin-left: auto;
 }
 
+main {
+    padding: 0;
+}
+
 .list {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin-top: 46px;
 }
 
 .list__item {
@@ -66,7 +74,6 @@ body {
 
 .sidebar__footer {
     margin-top: 40px;
-    padding: 24px;
     align-self: flex-end;
 }
 
