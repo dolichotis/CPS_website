@@ -162,11 +162,41 @@ main {
     margin-left: 8px;
 }
 
-.menu {
+.menuContainer {
     margin-top: 16px;
     overflow: hidden;
 }
 
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.menu__elem {
+    display: inline-block;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.linkItem {
+    display: block;
+    color: #7E7E82;
+    text-decoration: none;
+}
+
+.menu__item {
+    padding: 8px 16px;
+}
+
+.menu__item--active {
+    background-color: white;
+    border: 2px solid #B8FFEC;
+    border-radius: 6px;
+}
+
+/*
 .menu__container {
     margin: 0 -17px -24px 0;
     padding: 0 17px 24px 0;
@@ -175,8 +205,6 @@ main {
     list-style-type: none;
     overflow: scroll;
     align-content: center;
-    /* Добавим дополнительный нижнее поле элементу, в котором прокручивается меню */
-    /* С помощью отрицательного отступа компенсируем «нарощенное» поле  */
 }
 
 .linkItem {
@@ -200,6 +228,7 @@ main {
     background-color: #FFFFFF;
     border-radius: 6px;
 }
+ */
 
 .firstBlock {
     display: flex;
@@ -295,9 +324,8 @@ main {
     main {
         padding: 32px;
     }
-    .menu__container {
-        flex-wrap: wrap;
-        align-content: flex-start;
+    .menu {
+        white-space: normal;
     }
     .firstBlock__text {
         width: 45%;
