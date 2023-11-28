@@ -51,7 +51,7 @@ main {
 }
 
 .listItem {
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color: #1B1C21;
 }

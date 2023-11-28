@@ -181,7 +181,7 @@ main {
 }
 
 .linkItem {
-    display: block;
+    display: inline-block;
     color: #7E7E82;
     text-decoration: none;
 }
