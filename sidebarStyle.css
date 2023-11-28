@@ -12,6 +12,8 @@ body {
     box-sizing: border-box;
     padding: 24px;
     box-shadow: 16px 0 52px #0E185033;
+    height: 100vh;
+    min-height: 745px;
 }
 
 .sidebar__header {
@@ -51,8 +53,11 @@ main {
 .listItem {
     display: block;
     text-decoration: none;
-    padding: 16px 0;
     color: #1B1C21;
+}
+
+.list__item {
+    padding: 16px 0;
 }
 
 .list__item:hover {
@@ -113,8 +118,7 @@ main {
  */
 
 .sidebar__footer {
-    margin-top: 40px;
-    align-self: flex-end;
+    margin-top: auto;
 }
 
 .contacts__button:not(:first-child) {
@@ -143,9 +147,11 @@ main {
 }
 
 .lang_item {
+    display: inline-block;
     padding: 0;
     text-transform: uppercase;
     color: #1B1C21;
+    font-weight: 700;
 }
 
 .lang_item:not(:first-child) {
