@@ -25,6 +25,7 @@ body {
     align-items: center;
     padding: 24px 16px;
     justify-content: flex-start;
+    border-bottom: 1px solid #D9FFF5;
 }
 
 .header__navigation {
@@ -60,16 +61,11 @@ body {
 
 .header__logo {
     position: relative;
+    text-decoration: none;
 }
 
 .header__logo--center {
     vertical-align: middle;
-}
-
-.shadow {
-    width: 100%;
-    height: 1px;
-    background-color: #D9FFF5;
 }
 
 @media (max-width: 768px) {
@@ -109,13 +105,12 @@ body {
 }
 
 @media (min-width: 1228px) {
-    .header,
-    .shadow {
+    .header {
         display: none;
     }
 }
 
-main {
+.main {
     padding: 24px;
 }
 
