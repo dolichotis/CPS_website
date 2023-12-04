@@ -316,14 +316,23 @@ main {
     }
 }
 
-.swiper {
+.brandsSwiper {
     width: 100%;
-    height: 234px;
-    padding: 16px;
+    height: 160px;
 }
 
-.swiper-wrapper {
-    margin-top: 16px;
+.brandsSwiper--textStyle {
+    font-family: "TT Lakes", "Arial", serif;
+    font-size: 16px;
+    color: #7E7E82;
+    text-transform: uppercase;
+}
+
+.swiper-slide {
+    width: 250px;
+    text-align: center;
+    font-size: 18px;
+    align-items: center;
 }
 
 .contentCard {
@@ -335,6 +344,8 @@ main {
     padding: 16px;
     box-sizing: border-box;
 }
+
+
 
 
 
