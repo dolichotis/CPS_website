@@ -33,29 +33,24 @@ if (window.innerWidth > 600) {
     console.log(wrap);
     console.log(wrapSize);
 
-    let buttonM = wrapSize.querySelector('.buttonMore');
-    let buttonL = wrapSize.querySelector('.buttonLess');
+    let button = wrapSize.querySelector('.brandsSwiper__button');
 
-    if (buttonM) {
-        buttonM.addEventListener('click', function() {
+    button.addEventListener('click', function () {
+        if (wrapSize.querySelector('.buttonMore')) {
             wrap.classList.add('grid--visible');
             wrap.classList.remove('grid--hidden');
             wrapSize.style.height = 'auto';
-            buttonM.textContent = 'Скрыть';
-            buttonM.classList.add('buttonLess');
-            buttonM.classList.remove('buttonMore');
-        });
-    } else if (buttonL) {
-        buttonL.addEventListener('click', function() {
+            button.textContent = 'Скрыть';
+            button.classList.add('buttonLess');
+            button.classList.remove('buttonMore');
+        } else if (wrapSize.querySelector('.buttonLess')) {
             wrap.classList.add('grid--hidden');
             wrap.classList.remove('grid--visible');
-            buttonL.textContent = 'Показать все';
-            buttonL.classList.add('buttonMore');
-            buttonL.classList.remove('buttonLess');
-        });
-    }
-
-
+            button.textContent = 'Показать все';
+            button.classList.add('buttonMore');
+            button.classList.remove('buttonLess');
+        }
+    });
 }
 
 
