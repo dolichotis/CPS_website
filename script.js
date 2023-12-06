@@ -1,6 +1,7 @@
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     loop: true,
+    slidesPerView: 'auto',
 
     // If we need pagination
     pagination: {
@@ -9,46 +10,44 @@ const swiper = new Swiper('.swiper', {
     },
 
     breakpoints: {
-        0: {spaceBetween: 16},
-        601: {spaceBetween: 0},
+        0: {spaceBetween: 16,
+            cssMode: true},
+        768: {spaceBetween: 0},
     },
-
-    slidesPerView: 'auto',
-    cssMode: true,
 
 });
 
 let element = document.querySelector('.swiper-slide')
 
-if (window.innerWidth > 600) {
+if (window.innerWidth >= 768) {
     let wrapSize = document.querySelector('.brandsSwiper');
     let wrap = document.querySelector('.swiper-wrapper');
+    let wrapSlide = wrap.querySelector('.contentCard');
+
     wrap.classList.add("grid");
     wrap.classList.add("grid--hidden");
+    wrapSize.classList.remove('swiper');
     wrap.classList.remove('swiper-wrapper');
     wrapSize.classList.add('swiper--size');
-    wrapSize.classList.remove('swiper');
-    element.style.marginRight = '32px';
+    wrapSlide.classList.remove('swiper-slide');
 
-    console.log(wrap);
-    console.log(wrapSize);
 
-    let button = wrapSize.querySelector('.brandsSwiper__button');
+    let buttonSwiper = wrapSize.querySelector('.brandsSwiper__button');
 
-    button.addEventListener('click', function () {
+    buttonSwiper.addEventListener('click', function () {
         if (wrapSize.querySelector('.buttonMore')) {
             wrap.classList.add('grid--visible');
             wrap.classList.remove('grid--hidden');
             wrapSize.style.height = 'auto';
-            button.textContent = 'Скрыть';
-            button.classList.add('buttonLess');
-            button.classList.remove('buttonMore');
+            buttonSwiper.textContent = 'Скрыть';
+            buttonSwiper.classList.add('buttonLess');
+            buttonSwiper.classList.remove('buttonMore');
         } else if (wrapSize.querySelector('.buttonLess')) {
             wrap.classList.add('grid--hidden');
             wrap.classList.remove('grid--visible');
-            button.textContent = 'Показать все';
-            button.classList.add('buttonMore');
-            button.classList.remove('buttonLess');
+            buttonSwiper.textContent = 'Показать все';
+            buttonSwiper.classList.add('buttonMore');
+            buttonSwiper.classList.remove('buttonLess');
         }
     });
 }

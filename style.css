@@ -115,7 +115,7 @@ body {
     }
 }
 
-main {
+.mainWrapper {
     padding: 24px;
 }
 
@@ -261,14 +261,14 @@ main {
 }
 
 @media (max-width: 768px) {
-    main {
+    .mainWrapper {
         padding: 24px 16px;
     }
     .firstBlock {
         flex-wrap: wrap;
     }
     .firstBlock__text--style {
-        height: 39px;
+        height: 38px;
         overflow:hidden;
     }
     .titleGroup__navigation {
@@ -287,7 +287,7 @@ main {
 }
 
 @media (min-width: 768px) and (max-width: 1228px) {
-    main {
+    .mainWrapper {
         padding: 24px;
     }
     .titleGroup__navigation {
@@ -309,7 +309,7 @@ main {
 }
 
 @media (min-width: 1228px) {
-    main {
+    .mainWrapper {
         padding: 32px;
     }
     .menu {
@@ -339,6 +339,20 @@ main {
     text-transform: uppercase;
 }
 
+.headerSwiper {
+    border-top: 1px solid #D9FFF5;
+    background: linear-gradient(to right, #F8F8F8, #FFFFFF);
+    background-clip: padding-box;
+    margin: 0 0 16px 0;
+    padding: 16px;
+}
+
+.brandsSwiper__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 16px;
+}
+
 .swiper-pagination {
     display: none;
 }
@@ -362,6 +376,12 @@ main {
     align-content: center;
     justify-content: space-between;
     margin-right: 16px;
+    @media (min-width: 768px) {
+        margin-right: 24px;
+    }
+    @media (min-width: 1120px) {
+        margin-right: 32px;
+    }
 }
 
 .contentCard__button {
@@ -376,8 +396,8 @@ main {
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
-    .swiper-wrapper {
+@media (max-width: 768px) {
+    .swiper-wrapper--mobile {
         gap: 0;
         flex-wrap: nowrap;
     }
@@ -385,18 +405,37 @@ main {
         display: block;
     }
     .brandsSwiper {
-        height: 150px;
+        height: 190px;
         overflow: hidden;
     }
-    .brandsSwiper__button,
-    .buttonMore {
+    .brandsSwiper__button{
         display: none;
+    }
+    .brandsSwiper::after {
+        content: '';
+        background: linear-gradient(to right,
+            transparent 0.01%,
+            #f8f8f8 100%);
+        width: 24px;
+        height: 81px;
+        position: absolute;
+        top: 63px;
+        right: 0;
+        z-index: 10;
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
+    .headerSwiper {
+        padding: 16px 24px;
+        margin-bottom: 24px;
+    }
     .brandsSwiper {
         height: auto;
+        margin-top: 32px;
+    }
+    .brandsSwiper__wrapper {
+        padding: 16px 24px;
     }
     .swiper--size {
         height: 265px;
@@ -408,7 +447,7 @@ main {
         justify-content: flex-start;
     }
     .grid--hidden {
-        height: 170px;
+        height: 155px;
         overflow: hidden;
     }
     .grid--visible {
@@ -417,11 +456,25 @@ main {
     }
     .brandsSwiper__button {
         display: inline-block;
+        padding: 15px 0 0 0;
+        margin-left: 56px;
     }
-    .brandsSwiper__button {
-        padding: 0;
-        padding-top: 13px;
-        margin-left: 32px;
+}
+
+@media (min-width: 1120px) {
+    .brandsSwiper {
+        margin-top: 51px;
+    }
+    .headerSwiper {
+        padding: 16px 32px;
+        margin-bottom: 32px;
+    }
+    .brandsSwiper__wrapper {
+        padding: 0 32px;
+    }
+    .grid--hidden {
+        height: 170px;
+        overflow: hidden;
     }
 }
 
@@ -434,15 +487,6 @@ main {
 @media (min-width: 1080px) and (max-width: 2000px) {
     .contentCard:nth-child(4n) {
         margin-right: 0;
-    }
-}
-
-.contentCard {
-    @media (min-width: 768px) {
-        margin-right: 24px;
-    }
-    @media (min-width: 1120px) {
-        margin-right: 32px;
     }
 }
 
