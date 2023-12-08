@@ -417,6 +417,8 @@ body {
         flex-wrap: wrap;
         row-gap: 16px;
         column-gap: 24px;
+        height: 160px;
+        overflow: hidden;
     }
     .contentCard {
         width: 224px;
@@ -425,15 +427,14 @@ body {
         height: auto;
         overflow: hidden;
     }
-    .brandsSwiper__wrapper {
-        height: 160px;
-        overflow: hidden;
-    }
     .swiper-pagination {
         display: none;
     }
     .brandsSwiper__button {
         display: block;
+    }
+    .brandsSwiper__button:checked {
+        transition: height 1s;
     }
 }
 
