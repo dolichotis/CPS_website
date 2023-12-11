@@ -35,13 +35,14 @@ if (window.innerWidth >= 768) {
 
             buttonSwiper.classList.add('buttonLess');
             buttonSwiper.classList.remove('buttonMore');
+            console.log('ddfdgd');
         } else if (brandsSwiper.querySelector('.buttonLess')) {
             buttonSwiper.textContent = 'Показать все';
             wrapperBrandsSwiper.style.overflow = 'hidden';
             wrapperBrandsSwiper.style.height = '160px';
 
-            buttonSwiper.classList.remove('buttonLess');
-            buttonSwiper.classList.add('buttonMore');
+            buttonSwiper.classList.remove('buttonMore');
+            buttonSwiper.classList.add('buttonLess');
         }
     });
 }
