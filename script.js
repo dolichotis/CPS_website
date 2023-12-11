@@ -31,18 +31,18 @@ if (window.innerWidth >= 768) {
         if (brandsSwiper.querySelector('.buttonMore')) {
             buttonSwiper.textContent = 'Скрыть';
             wrapperBrandsSwiper.style.overflow = 'visible';
-            wrapperBrandsSwiper.style.height = 'auto';
+            wrapperBrandsSwiper.style.height = '235px';
 
             buttonSwiper.classList.add('buttonLess');
             buttonSwiper.classList.remove('buttonMore');
-            console.log('ddfdgd');
         } else if (brandsSwiper.querySelector('.buttonLess')) {
             buttonSwiper.textContent = 'Показать все';
             wrapperBrandsSwiper.style.overflow = 'hidden';
             wrapperBrandsSwiper.style.height = '160px';
+            wrapperBrandsSwiper.style.transition = 'height 600ms';
 
-            buttonSwiper.classList.remove('buttonMore');
-            buttonSwiper.classList.add('buttonLess');
+            buttonSwiper.classList.remove('buttonLess');
+            buttonSwiper.classList.add('buttonMore');
         }
     });
 }
