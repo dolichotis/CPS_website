@@ -31,7 +31,7 @@ if (window.innerWidth >= 768) {
         if (brandsSwiper.querySelector('.buttonMore')) {
             buttonSwiper.textContent = 'Скрыть';
             wrapperBrandsSwiper.style.overflow = 'visible';
-            wrapperBrandsSwiper.style.height = '235px';
+            wrapperBrandsSwiper.style.height = 'auto';
 
             buttonSwiper.classList.add('buttonLess');
             buttonSwiper.classList.remove('buttonMore');
@@ -39,7 +39,6 @@ if (window.innerWidth >= 768) {
             buttonSwiper.textContent = 'Показать все';
             wrapperBrandsSwiper.style.overflow = 'hidden';
             wrapperBrandsSwiper.style.height = '160px';
-            wrapperBrandsSwiper.style.transition = 'height 600ms';
 
             buttonSwiper.classList.remove('buttonLess');
             buttonSwiper.classList.add('buttonMore');

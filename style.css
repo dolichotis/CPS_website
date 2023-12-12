@@ -404,6 +404,10 @@ body {
 @media (max-width: 768px) {
     .brandsSwiper--margins {
         margin-bottom: 16px;
+
+    }
+    .brandsSwiper__wrapper {
+        padding: 0 16px;
     }
 }
 
