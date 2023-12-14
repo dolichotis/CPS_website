@@ -371,7 +371,7 @@ body {
 }
 
 .contentCard--background {
-    background-image: url('/src/img/go.svg');
+    background-image: url('../img/go.svg');
     background-repeat: no-repeat;
     background-position: right;
     background-origin: content-box;
