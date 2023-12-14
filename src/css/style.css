@@ -1,13 +1,13 @@
 @font-face {
     font-family: "TT Lakes";
     src: local("TT Lakes"),
-    url("fonts/TTLakes-Regular.ttf");
+    url("../../fonts/TTLakes-Regular.ttf");
 }
-
+    
 @font-face {
     font-family: "TT Lakes bold";
     src: local("TT Lakes bold"),
-    url("fonts/TTLakes-Bold.ttf");
+    url("../../fonts/TTLakes-Bold.ttf");
 }
 
 body {
@@ -19,13 +19,16 @@ body {
     min-width: 320px;
 }
 
-
 .header {
     background-color: #fff;
     display: flex;
     align-items: center;
     padding: 24px 16px;
     justify-content: flex-start;
+}
+
+.header__button {
+    margin-right: 16px;
 }
 
 .header__navigation {
@@ -36,10 +39,6 @@ body {
 
 .header__navigation--hidden {
     display: flex;
-}
-
-.header__button {
-    margin-right: 16px;
 }
 
 .button {
@@ -237,7 +236,7 @@ body {
 .buttonMore::before {
     content: "";
     position: absolute;
-    background: url('img/expand.svg') no-repeat;
+    background: url('../img/expand.svg') no-repeat;
     width: 24px;
     height: 24px;
     left: 25px;
@@ -246,7 +245,7 @@ body {
 .buttonLess::before {
     content: "";
     position: absolute;
-    background: url('img/expand.svg') no-repeat;
+    background: url('../img/expand.svg') no-repeat;
     width: 24px;
     height: 24px;
     left: 25px;
@@ -371,13 +370,20 @@ body {
     cursor: pointer;
 }
 
+.contentCard--background {
+    background-image: url('/src/img/go.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: content-box;
+}
+
 .contentCard__button {
     width: 40px;
     height: 40px;
     border: 2px solid #FF3E79;
     background-color: white;
     border-radius: 50%;
-    background-image: url('img/imageSlider/dropdown.svg');
+    background-image: url('../img/imageSlider/dropdown.svg');
     background-repeat: no-repeat;
     background-position: 50%;
     cursor: pointer;
