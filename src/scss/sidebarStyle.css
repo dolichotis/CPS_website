@@ -146,7 +146,7 @@ main {
     padding: 0;
 }
 
-.lang_item {
+.lang__item {
     display: inline-block;
     padding: 0;
     text-transform: uppercase;
@@ -154,10 +154,10 @@ main {
     font-weight: 700;
 }
 
-.lang_item:not(:first-child) {
+.lang__item:not(:first-child) {
     margin-left: 7px;
 }
 
-.lang_item--chosen {
+.lang__item--chosen {
     color: #7E7E82;
 }

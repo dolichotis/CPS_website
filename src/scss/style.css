@@ -393,7 +393,7 @@ body {
     content: '';
     background: linear-gradient(to right,
     transparent 0.01%,
-    #f8f8f8 100%);
+    #fff 100%);
     width: 24px;
     height: 80px;
     position: absolute;
@@ -411,7 +411,6 @@ body {
 @media (max-width: 768px) {
     .brandsSwiper--margins {
         margin-bottom: 16px;
-
     }
     .brandsSwiper__wrapper {
         padding: 0 16px;
